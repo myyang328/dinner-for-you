@@ -31,51 +31,54 @@
 
         .app-container { width: 90%; max-width: 400px; margin: 0 auto; padding-top: 15px; }
 
-        .mode-nav { display: flex; background: var(--section-bg); border-radius: 14px; padding: 4px; margin-bottom: 15px; }
+        .mode-nav { display: flex; background: var(--section-bg); border-radius: 14px; padding: 4px; margin-bottom: 12px; }
         .mode-btn { flex: 1; border: none; padding: 10px; border-radius: 10px; font-size: 13px; background: transparent; cursor: pointer; color: var(--sub); transition: 0.3s; }
         .mode-btn.active { background: var(--card); color: var(--text); font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
 
-        /* 紧凑型卡片 */
-        .card { background: var(--card); border-radius: 24px; padding: 5px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-        .row { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        /* 饱满型卡片 */
+        .card { background: var(--card); border-radius: 28px; padding: 10px 22px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .row { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--border); }
         .row:last-child { border-bottom: none; }
         .item-info { flex: 1; display: flex; align-items: center; }
-        .item-emoji { font-size: 24px; margin-right: 12px; }
+        .item-emoji { font-size: 26px; margin-right: 14px; }
         .item-text { display: flex; flex-direction: column; }
-        .tag { font-size: 10px; color: var(--sub); margin-bottom: 1px; }
-        .name { font-size: 14px; font-weight: 500; }
-        .kcal-box { font-size: 14px; margin-right: 12px; font-weight: 600; width: 70px; text-align: right; }
+        .tag { font-size: 10px; color: var(--sub); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .name { font-size: 15px; font-weight: 600; color: #333; }
+        .kcal-box { font-size: 14px; margin-right: 14px; font-weight: 700; width: 75px; text-align: right; color: var(--text); }
         
         .refresh-btn { 
             background: linear-gradient(135deg, #FDFDFB 0%, #F4F4F2 100%); 
-            border: 1px solid #EDEDEB; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; 
+            border: 1px solid #EDEDEB; width: 38px; height: 38px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
+        .refresh-btn:active { transform: scale(0.95); background: #EEE; }
 
-        /* 紧凑型汇总栏 */
-        .summary { margin-top: 15px; background: var(--section-bg); border-radius: 20px; padding: 15px; position: relative; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; text-align: center; }
-        .grid-item { position: relative; cursor: pointer; padding: 4px; border-radius: 8px; transition: 0.2s; }
+        .summary { margin-top: 12px; background: var(--section-bg); border-radius: 24px; padding: 16px; position: relative; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; text-align: center; }
+        .grid-item { position: relative; cursor: pointer; padding: 6px; border-radius: 10px; transition: 0.2s; }
         .grid-item:active { background: #E5E5E3; }
-        .v { font-size: 14px; font-weight: 700; display: block; }
-        .l { font-size: 9px; color: var(--sub); }
+        .v { font-size: 15px; font-weight: 800; display: block; }
+        .l { font-size: 9px; color: var(--sub); font-weight: 500; }
         
         .popover { 
             position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%);
-            background: #FFF; color: #000; padding: 4px 8px; border-radius: 6px;
-            font-size: 10px; white-space: nowrap; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: #444; color: #FFF; padding: 5px 10px; border-radius: 8px;
+            font-size: 11px; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             display: none; z-index: 10;
         }
 
-        .advice { font-size: 11px; border-top: 1px solid #DCDCD7; padding-top: 10px; color: #666; line-height: 1.5; }
+        .advice { font-size: 12px; border-top: 1px solid #DCDCD7; padding-top: 12px; color: #555; line-height: 1.6; }
 
         .main-roll { 
-            width: 100%; border: none; padding: 16px; border-radius: 18px; 
+            width: 100%; border: none; padding: 18px; border-radius: 22px; 
             background: linear-gradient(90deg, #444442 0%, #5A5A58 100%); 
-            color: white; margin-top: 15px; font-weight: 600; font-size: 15px; cursor: pointer; 
+            color: white; margin-top: 15px; font-weight: 700; font-size: 16px; cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+        .main-roll:active { transform: scale(0.98); opacity: 0.9; }
 
-        .fade-in { animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateX(5px); } to { opacity: 1; transform: translateX(0); } }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -83,7 +86,7 @@
     <div id="splash">
         <div class="typing-container" id="typewriter"></div>
         <div class="welcome-emoji" id="splash-emoji">🍱</div>
-        <button onclick="startApp()" style="padding:16px 40px; border-radius:30px; border:none; background:var(--accent); color:white; font-size:15px; font-weight:600; cursor:pointer;">今日の献立、見てみよっか。</button>
+        <button onclick="startApp()" style="padding:16px 40px; border-radius:30px; border:none; background:var(--accent); color:white; font-size:15px; font-weight:600; cursor:pointer; box-shadow: 0 4px 10px rgba(146,163,142,0.3);">今日の献立、見てみよっか。</button>
     </div>
 
     <div class="app-container">
